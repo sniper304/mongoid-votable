@@ -34,7 +34,7 @@ module Mongoid
             return :destroyed
           end
         else
-          vote.inc(:value, value)
+          vote.inc(value: value)
           do_vote!(vote, value, :updated)
           if block_given?
             yield vote.value, :updated
