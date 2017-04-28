@@ -1,12 +1,12 @@
 # encoding: UTF-8
 module Mongoid
-  class Vote    
+  class Vote
     include Mongoid::Document
-    
-    field :value    
+
+    field :value
     belongs_to :voter, polymorphic: true
     embedded_in :votable, polymorphic: true
-    
-    index :voter_id => 1        
+
+    index :voter_id => 1
   end
 end
